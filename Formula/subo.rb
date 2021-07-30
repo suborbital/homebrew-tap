@@ -10,7 +10,7 @@ class Subo < Formula
 
   def install
     ENV["GOPATH"] = HOMEBREW_CACHE/"go_cache"
-    system "go", "build", "-o .bin/subo", "./subo"
+    system "go", "build", "-o", ".bin/subo", "./subo"
     prefix.install Dir[".build/subo"]
   end
 
