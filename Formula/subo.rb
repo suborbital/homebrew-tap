@@ -2,9 +2,9 @@ class Subo < Formula
   desc "The Suborbital CLI for building and deploying WebAssembly-based projects."
   homepage "https://suborbital.dev"
   head "https://github.com/suborbital/subo.git"
-  url "https://github.com/suborbital/subo/archive/v0.0.19.tar.gz"
-  sha256 "9e5614cfe1e4dcd95f69c09024d81d69512c6d6d0625ab215db1183a4aa2b51c"
-  version "0.0.19"
+  url "https://github.com/suborbital/subo/archive/v0.0.20.tar.gz"
+  sha256 "19cba3943fe6ef502b0cb43c1dae7aef49c36dcfe440eea6e7d8d1ad2003884b"
+  version "0.0.20"
 
   depends_on "go" => :build
 
