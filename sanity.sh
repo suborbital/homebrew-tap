@@ -5,8 +5,8 @@ VERSION="$(cat .subo-version)"
 err_sum=0
 
 function check() {
-    local file="Formula/subo.rb"
-    local match=$(grep -E "$1" $file)
+    file="Formula/subo.rb"
+    match=$(grep -E "$1" $file)
 
     if [ $? -ne 0 ]; then
         >&2 echo "match not found for $1"
@@ -26,6 +26,8 @@ check "sha256 \"$sha\""
 
 if [ $err_sum -eq 0 ]; then
     echo "success"
+else
+    echo "failed with $err_sum errors"
 fi
 
 exit $err_sum
