@@ -1,0 +1,16 @@
+name: Testapalooza
+
+on: pull_request
+
+jobs:
+  check_hash:
+   name: Smoke
+   runs-on: ubuntu-latest
+
+   steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Check subo.rb hash and version numbers for consistency
+      run: |
+        ./sanity.sh
