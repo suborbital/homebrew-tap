@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Double check sha and tag
         run: |
-          curl -L -o subo.tar.gz https://download.suborbital.network/subo/brew/{{ github.event.client_payload.tag }}
+          curl -L -o subo.tar.gz https://download.suborbital.network/subo/brew/${{ github.event.client_payload.tag }}
           echo ${{ github.event.client_payload.sha }} subo.tar.gz | sha256sum --check
           rm subo.tar.gz
       - name: Creates new file
