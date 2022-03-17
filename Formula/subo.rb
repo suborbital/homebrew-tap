@@ -9,9 +9,7 @@ class Subo < Formula
 
   def install
     ENV["GOPATH"] = HOMEBREW_CACHE/"go_cache"
-    system "go", "build", "-o", "subo"
-
-    bin.install "subo"
+    system "go", "build", "-o", bin/"subo"
 
     bash_output = Utils.safe_popen_read(bin/"subo", "completion", "bash")
     (bash_completion/"subo").write bash_output
