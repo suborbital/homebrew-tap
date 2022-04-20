@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Double check sha and tag
         run: |
           curl -L -o subo.tar.gz https://download.suborbital.network/subo/brew/${{ github.event.client_payload.tag }}
