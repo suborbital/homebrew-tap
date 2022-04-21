@@ -19,7 +19,7 @@ jobs:
           sed 's/<<<tag>>>/${{ github.event.client_payload.tag }}/g' .github/actions/formula.tmpl > ./Formula/subo.rb
           sed -i 's/<<<sha256>>>/${{ github.event.client_payload.sha }}/g' ./Formula/subo.rb
       - name: Creates PR
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v4
         with:
           commit-message: '[Auto] Update homebrew formula to version v${{ github.event.client_payload.tag }}'
           committer: Github <noreply@github.com>
