@@ -5,12 +5,12 @@
 class Subo < Formula
   desc "Suborbital CLI for building and deploying WebAssembly-based projects"
   homepage "https://suborbital.dev"
-  version "0.5.1"
+  version "0.5.2"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/suborbital/subo/releases/download/v0.5.1/subo-v0.5.1-darwin-amd64.tar.gz"
-      sha256 "5a963717472b3af9d791aaefb5272c1052d29a8abae6f805348ea81ca2835e5f"
+    if Hardware::CPU.arm?
+      url "https://github.com/suborbital/subo/releases/download/v0.5.2/subo-v0.5.2-darwin-arm64.tar.gz"
+      sha256 "82080b6935add4c32152730e7577b59cee1f148e4f90b111292cbf048a1d58c0"
 
       def install
         bin.install "subo"
@@ -25,9 +25,9 @@ class Subo < Formula
         (fish_completion/"subo.fish").write fish_output
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/suborbital/subo/releases/download/v0.5.1/subo-v0.5.1-darwin-arm64.tar.gz"
-      sha256 "cdb99679f702e7b92a3aadeff73b44798097f4efe8d66da8e0b5dc68708037a3"
+    if Hardware::CPU.intel?
+      url "https://github.com/suborbital/subo/releases/download/v0.5.2/subo-v0.5.2-darwin-amd64.tar.gz"
+      sha256 "2f4f9f371bf3b692777229277b26daab52d51931d68a9daa61b7e50e46bb47da"
 
       def install
         bin.install "subo"
@@ -45,9 +45,9 @@ class Subo < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/suborbital/subo/releases/download/v0.5.1/subo-v0.5.1-linux-arm64.tar.gz"
-      sha256 "9d286ae543bb06d1818fb9cb61c6c1beb523ce7215127db81c58370c59806e27"
+    if Hardware::CPU.intel?
+      url "https://github.com/suborbital/subo/releases/download/v0.5.2/subo-v0.5.2-linux-amd64.tar.gz"
+      sha256 "df926b21d4a2b6d7a9f4b1db11e59aff77192847d6fb985661cad90347c697e6"
 
       def install
         bin.install "subo"
@@ -62,9 +62,9 @@ class Subo < Formula
         (fish_completion/"subo.fish").write fish_output
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/suborbital/subo/releases/download/v0.5.1/subo-v0.5.1-linux-amd64.tar.gz"
-      sha256 "db44ada6ed073f6633e4bb65dfab93559fdcd519b20878140717047d6b0bc60f"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/suborbital/subo/releases/download/v0.5.2/subo-v0.5.2-linux-arm64.tar.gz"
+      sha256 "015f5d98705b66c20865fb3f6f6da92fc31a51424ecdc37ef8f906041f1c28f9"
 
       def install
         bin.install "subo"
