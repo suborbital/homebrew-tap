@@ -9,8 +9,8 @@ class Subo < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/suborbital/subo/releases/download/v0.5.1/subo-v0.5.1-darwin-amd64.tar.gz"
-      sha256 "5a963717472b3af9d791aaefb5272c1052d29a8abae6f805348ea81ca2835e5f"
+      url "https://github.com/suborbital/subo/archive/v0.5.2.tar.gz"
+      sha256 "faba21e8884855eb76e814b6835f44789253b3a9c8afc56b4abb8f91209956d7"
 
       def install
         bin.install "subo"
