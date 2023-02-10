@@ -14,6 +14,10 @@ jobs:
       HOMEBREW_NO_ANALYTICS: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
       HOMEBREW_NO_INSTALL_CLEANUP: 1
+    strategy:
+      matrix:
+        formula:
+          - subo
 
     steps:
       - uses: Homebrew/actions/setup-homebrew@master
@@ -26,4 +30,4 @@ jobs:
           restore-keys: ${{ runner.os }}-rubygems-
 
       - run: brew install-bundler-gems
-      - run: brew test-bot --tap=suborbital/subo --testing-formulae subo
+      - run: brew test-bot --tap=suborbital/tap --testing-formulae ${{ matrix.formula }}

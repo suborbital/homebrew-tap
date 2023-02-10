@@ -3,7 +3,7 @@
 To install `subo` with `brew`, you can use this tap:
 
 ```console
-> brew tap suborbital/subo
+> brew tap suborbital/tap
 > brew install subo
 ```
 
